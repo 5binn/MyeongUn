@@ -8,10 +8,10 @@ public class App {
     App(Scanner sc) {
         this.sc = sc;
     }
-
     void run() {
         System.out.println("== 명언 앱 ==");
-        while (true) {
+        long 번호 = 1;
+        while (true){
             System.out.print("명령) ");
             String 명령 = this.sc.nextLine().trim();
             if (명령.equals("등록")) {
@@ -19,9 +19,11 @@ public class App {
                 String 명언 = this.sc.nextLine().trim();
                 System.out.print("작가 : ");
                 String 작가 = this.sc.nextLine().trim();
-                System.out.println("1번 명령이 등록되었습니다.");
-                continue;
-            } else if (명령.equals("종료")) {
+                System.out.printf("%d번 명령이 등록되었습니다.\n",번호);
+                번호++;
+            } else if (명령.equals("목록")) {
+                System.out.println("번호 / 작가 / 명언"+"\n---------------");
+            }else if (명령.equals("종료")) {
                 break;
             }
         }
